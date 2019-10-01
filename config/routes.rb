@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   get 'pages/projects'
   get 'pages/contact'
   get 'pages/stuff'
-  root 'pages/index'
+  root 'pages#index'
 end

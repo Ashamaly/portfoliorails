@@ -1,3 +1,385 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+    /*removing margins and padding as well as text decoration for everything*/
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+/*for some reason alicewhite was showing up instead of white in some places, had to manually set to white*/
+body {
+    background-color: white;
+}
+
+main {
+    background-color: white;
+    min-height: calc(100vh - 140px); 
+}
+
+@media only screen and (min-width: 1000px) {
+    main{
+    min-height: calc(100vh - 330px); /*% didnt work so set to view height minus the footer and header*/
+    }
+}
+
+header {
+    background-color: white;
+    width: 100%;
+    height: 100px;
+}
+
+header .header {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #111;
+    font-weight: 900;
+}
+
+header nav ul {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    
+}
+header nav ul  li{
+    display: inline-block;
+    float: left;
+    list-style: none;
+    padding: 0 16px;
+    transition-duration: 0.4s;
+}
+header nav ul li a{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #111;
+    text-transform: uppercase;
+}
+
+/*highlighting hovered buttons, left and right borders dont work check spacing or margins*/
+header nav ul li:hover {
+    background-color: lightgray;
+    border-left: 4px #111;
+    border-right: 4px #111;
+}
+
+/*Adjusting header for desktop version*/
+@media only screen and (min-width: 1000px) {
+    header .header {
+        margin: 30px 0;
+        text-align: left;
+        line-height: 40px;
+        padding: 0px 20px 0px 40px;
+        border-right: 3px solid #111;
+        float: left;
+    }
+
+    header nav ul {
+        margin: 20px 0px 0px 20px;    
+        float: left;    
+    }
+    
+    header nav ul li a{
+        line-height: 60px;
+    }
+
+
+}
+
+
+.banner {
+    width: 100%;
+    height: calc(100vh - 100px); /*make the banner the viewheight minus the header*/
+    background-image: url('../images/background1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: table;
+
+
+}
+
+/*didnt like full screen look in desktop view, changed to show buttons below*/
+@media only screen and (min-width: 1000px) {
+    .banner {
+        height: 550px;
+    }
+}
+
+.mobile-center {
+    display: table-cell;
+    vertical-align: middle;
+
+    opacity: 0; /*initialize as not visible*/
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+
+    /*Flex box has failed me*/
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+/*Keyframe creation setting starting state and end state*/
+@-webkit-keyframes fadeIn { from { opacity:0;} to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.banner h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 2px 2px 8px #111;
+
+    opacity: 0; /*initialize as not visible*/
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+
+    -webkit-animation-delay: 0.7s;
+    -moz-animation-delay: 0.7;
+    animation-delay: 0.7s;
+}
+
+.banner h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    color: white;
+    font-weight: 100;
+    text-align: center;
+    line-height: 40px;
+    text-shadow: 2px 2px 8px #111;
+
+    opacity: 0; /*initialize as not visible*/
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+
+    -webkit-animation-delay: 1.3s;
+    -moz-animation-delay: 1.3s;
+    animation-delay: 1.3s;
+}
+
+.links {
+    padding-bottom: 20px;
+    background-color: white;
+
+    opacity: 0; /*initialize as not visible*/
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+}
+
+
+.links div {
+    margin: 16px 16px 0;
+    width: calc(100% - 30px);
+    height: 100px;
+    border-radius: 8px;
+    background: white;
+    transition-duration: 0.5s;
+    box-shadow: 0px 4px 10px 0px #ccc;
+}
+
+.links div:hover {
+    background-color: lightgray;
+}
+
+.links div h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    color: #111;
+    font-weight: 100;
+    text-align: center;
+    line-height: 100px;
+}
+
+@media only screen and (min-width: 1000px) {
+    /*setting grid areas*/
+    .button1 {
+        grid-area: button1;
+    }
+    .button2 {
+        grid-area: button2;
+    }
+    .button3 {
+        grid-area: button3;
+    }
+    .button4 {
+        grid-area: button4;
+    }
+
+
+    .links {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        /* grid-template-areas: 
+        "button1 button1 button4 button4"
+        "button2 button2 button4 button4"
+        "button3 button3 button4 button4"      come back to this after mvp is completed   */
+
+        
+    }
+}
+
+
+footer {
+    width: calc(100% - 80px);
+    padding: 40px 40px;
+    background-color: white;
+    height: 150px;
+}
+
+footer ul {
+    width: fit-content;
+    float: left;
+    padding-left: 20px;
+
+}
+footer ul li {
+    display: block;
+    list-style: none;
+}
+footer ul li a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #111;
+    line-height: 40px; /*makes the content more readable and aligns with icons*/
+}
+
+.socials {
+    width: 45px;
+    float: right;
+}
+
+.socials img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/*Project page CSS*/
+.pmain {
+    grid-area: main;
+    line-height: 35px;
+}
+
+.pmain img {
+    width: 100%;
+}
+
+.info {
+    grid-area: side;
+}
+
+.info a {
+    color: #111;
+    transition-duration: 0.5s;
+}
+
+.info a:hover {
+    color: #ccc;
+}
+
+.info h3 {
+    font-weight: 300;
+    line-height: 40px;
+}
+
+.project-container {
+    display: grid;
+    padding: 20px 40px;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: auto;
+
+    grid-template-areas: 
+    "main main main"
+    "side side side"
+    ;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #111;
+}
+
+@media only screen and (min-width: 1000px){
+    .project-container {
+    grid-template-areas: 
+    "side main main"
+    "side main main"
+    ;
+    }
+
+    .pmain img {
+        width: 90%;
+    }
+}
+
+.contact-container {
+    display: grid;
+    padding: 20px 40px;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: auto;
+
+    grid-template-areas: 
+    "main main main"
+    "main main main";
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #111;
+}
+
+.rounded-text[type=text] {
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 1000px) {
+    .project-container {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas: 
+        "side main ."
+        "side main .";
+    }
+}

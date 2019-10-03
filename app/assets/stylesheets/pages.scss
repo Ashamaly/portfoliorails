@@ -96,7 +96,7 @@ header nav ul li:hover {
 .banner {
     width: 100%;
     height: calc(100vh - 100px); /*make the banner the viewheight minus the header*/
-    background-image: url('/app/assets/images/background1.jpg');
+    background-image: asset-url('background1.jpg'); //use asset url instead of normal css here
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
